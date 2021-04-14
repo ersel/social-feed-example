@@ -1,7 +1,7 @@
 import React from "react";
 import Comment from "./Comment";
 
-const SocialPost = ({ post }) => {
+const SocialPost = ({ post, likeCount, setLikeCount }) => {
   return (
     <div className="feed-item">
       <span>
@@ -12,7 +12,10 @@ const SocialPost = ({ post }) => {
         Likes: {post.favs}, {post.dateTime}
       </span>
       {post.comments.map((comment) => {
-        return <Comment comment={comment} />;
+        return <Comment 
+        likeCount = {likeCount}
+        setLikeCount= {setLikeCount}
+        comment={comment} />;
       })}
       <br />
       <br />

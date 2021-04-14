@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SocialPost from "./SocialPost";
 
 let posts = [
@@ -27,6 +27,9 @@ let posts = [
 ];
 
 const SocialFeed = () => {
+  const [likeCount, setLikeCount] = useState(posts[0].favs);
+  const [comment, setComment] = useState("x");
+
   return (
     <>
       <div>
@@ -34,7 +37,15 @@ const SocialFeed = () => {
       </div>
       <div>
         {posts.map((post) => {
-          return <SocialPost post={post} />
+          return (
+            <SocialPost
+              post={post}
+              likeCount={likeCount}
+              setLikeCount={setLikeCount}
+              comment ={comment}
+              setComment={setComment}
+            />
+          );
         })}
       </div>
     </>
