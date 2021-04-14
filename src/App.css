@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.feed-item {
+  margin-top: 20px;
+  background-color: seagreen;
+  color: white;
+  font-weight: 400;
+}
